@@ -1,0 +1,152 @@
+package com.example.myfoodapp.Adapter;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.myfoodapp.Model.HomeHorModel;
+import com.example.myfoodapp.Model.HomeVerModel;
+import com.example.myfoodapp.R;
+import com.example.myfoodapp.UpdateVerticalRec;
+
+import java.util.ArrayList;
+
+public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHolder> {
+
+
+     UpdateVerticalRec updateVerticalRec;
+     Activity activity;
+    ArrayList<HomeHorModel> list;
+
+    boolean check = true;
+    boolean select =true;
+    int row_index =-1;
+
+    public HomeHorAdapter(UpdateVerticalRec updateVerticalRec, Activity activity, ArrayList<HomeHorModel> list) {
+        this.updateVerticalRec = updateVerticalRec;
+        this.activity = activity;
+        this.list = list;
+    }
+
+
+    @NonNull
+    @Override
+    public HomeHorAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.home_hor_item,parent,false));
+
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull HomeHorAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        holder.imageView.setImageResource(list.get(position).getImage());
+        holder.name.setText(list.get(position).getName());
+/*
+        if (check) {
+            ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
+            homeVerModels.add(new HomeVerModel(R.drawable.pizza1, "Pizza ", "10:00 -23:00", "Rating:4.1", "Min : $ 32"));
+            homeVerModels.add(new HomeVerModel(R.drawable.pizza, "Pizza 1 ", "10:00 -23:00", "Rating:4.1", "Min : $ 32"));
+            homeVerModels.add(new HomeVerModel(R.drawable.pizza, "Pizza2 ", "10:00 -23:00", "Rating:4.1", "Min : $ 32"));
+
+           // updateVerticalRec.callBack(position, homeVerModels);
+            check = false;
+        }
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                row_index = position;
+                notifyDataSetChanged();
+
+                if (position == 0) {
+                    ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
+                    homeVerModels.add(new HomeVerModel(R.drawable.pizza1, "Pizza ", "10:00 -23:00", "Rating:4.1", "Min : $ 32"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.pizza, "Pizza 1 ", "10:00 -23:00", "Rating:4.1", "Min : $ 32"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.pizza, "Pizza ", "10:00 -23:00", "Rating:4.1", "Min : $ 32"));
+
+                    updateVerticalRec.callBack(position, homeVerModels);
+
+                } else if (position == 1) {
+                    ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
+                    homeVerModels.add(new HomeVerModel(R.drawable.burger1, "Burger 1", "10:00 -23:00", "4.1", "Min : $ 32"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.burger2, "Burger 2 ", "10:00 -23:00", "Rating:4.3", "Min : $ 32"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.burger3jpg, "Burger3 ", "10:00 -23:00", "4.1", "Min : $ 32"));
+
+                    updateVerticalRec.callBack(position, homeVerModels);
+
+                } else if (position == 2) {
+                    ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
+                    homeVerModels.add(new HomeVerModel(R.drawable.fries1, "Fries 1 ", "10:00 -23:00", "4.1", "Min : $ 32"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.fries2, "Fries 2  ", "10:00 -23:00", "4.1", "Min : $ 32"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.fries3, "Fries 3  ", "10:00 -23:00", "4.1", "Min : $ 32"));
+
+                    updateVerticalRec.callBack(position, homeVerModels);
+
+                } else if (position == 3) {
+                    ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
+                    homeVerModels.add(new HomeVerModel(R.drawable.sandwich1, "Sandwich 1 ", "10:00 -23:00", "4.1", "Min : $ 32"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.sandwich2, "Sandwich 2 ", "10:00 -23:00", "4.1", "Min : $ 32"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.sandwich3, "Sandwich 3 ", "10:00 -23:00", "4.1", "Min : $ 32"));
+
+                    updateVerticalRec.callBack(position, homeVerModels);
+
+                } else if (position == 4) {
+                    ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
+                    homeVerModels.add(new HomeVerModel(R.drawable.ice1, "Ice Cream 1 ", "10:00 -23:00", "4.1", "Min : $ 32"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.ice2, "Ice Cream 2 ", "10:00 -23:00", "4.1", "Min : $ 32"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.ice3, "Ice Cream 3 ", "10:00 -23:00", "4.1", "Min : $ 32"));
+
+                    updateVerticalRec.callBack(position, homeVerModels);
+
+                }
+
+            }
+
+
+        });
+
+
+        if (select) {
+            if (position == 0) {
+                holder.cardView.setBackgroundResource(R.drawable.change_bg);
+            }
+        } else {
+            if (row_index == position) {
+                holder.cardView.setBackgroundResource(R.drawable.change_bg);
+            } else {
+                holder.cardView.setBackgroundResource(R.drawable.default_bg);
+            }
+        }
+        
+ */
+    }
+
+
+
+    @Override
+    public int getItemCount() {
+        return list.size();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+
+        ImageView imageView;
+        TextView name;
+
+        CardView cardView;
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            imageView=itemView.findViewById(R.id.home_hor_img);
+            name=itemView.findViewById(R.id.home_hor_name);
+            cardView =itemView.findViewById(R.id.cardView);
+
+        }
+    }
+}
